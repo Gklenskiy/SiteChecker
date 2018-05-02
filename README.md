@@ -11,12 +11,7 @@ dotnet build
 dotnet publish
 ```
 
-2. Copy sites.db and users.db to 
-```
-src\SiteChecker\bin\Debug\netcoreapp2.0\publish\
-```
-
-3. Copy SQLite.Interop.dll from *src\SiteChecker\bin\Debug\netcoreapp2.0\x64* or *src\SiteChecker\bin\Debug\netcoreapp2.0\x86* to publish directory
+2. Copy SQLite.Interop.dll from *src\SiteChecker\bin\Debug\netcoreapp2.0\x64* or *src\SiteChecker\bin\Debug\netcoreapp2.0\x86* to publish directory
 
 ## Usage
 
