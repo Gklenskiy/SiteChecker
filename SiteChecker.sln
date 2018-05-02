@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteChecker", "src\SiteChecker\SiteChecker.csproj", "{CF4758D1-0111-4B88-AF4B-9CC21F524506}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SiteChecker.Tests", "test\SiteChecker.Tests\SiteChecker.Tests.csproj", "{224368C3-5191-4C2F-BA00-502B50C8AB41}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CF4758D1-0111-4B88-AF4B-9CC21F524506}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF4758D1-0111-4B88-AF4B-9CC21F524506}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF4758D1-0111-4B88-AF4B-9CC21F524506}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF4758D1-0111-4B88-AF4B-9CC21F524506}.Release|Any CPU.Build.0 = Release|Any CPU
+		{224368C3-5191-4C2F-BA00-502B50C8AB41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{224368C3-5191-4C2F-BA00-502B50C8AB41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{224368C3-5191-4C2F-BA00-502B50C8AB41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{224368C3-5191-4C2F-BA00-502B50C8AB41}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
