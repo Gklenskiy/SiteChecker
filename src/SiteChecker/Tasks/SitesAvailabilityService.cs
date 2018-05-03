@@ -45,7 +45,7 @@ namespace SiteChecker.Tasks
 				try
 				{
 					var checkedSite = await t;
-					await sitesRepository.UpdateStatusAsync(checkedSite.Id, checkedSite.CheckInterval,checkedSite.Status);
+					await sitesRepository.UpdateStatusAsync(checkedSite.Id, checkedSite.Status);
 				}
 				catch (OperationCanceledException)
 				{
@@ -68,7 +68,6 @@ namespace SiteChecker.Tasks
 			return new SiteCheckResult
 			{
 				Id = siteModel.Id,
-				CheckInterval = siteModel.CheckInterval,
 				Status = checkResult ? SiteStatusCodes.Ok : SiteStatusCodes.Fail
 			};
 		}

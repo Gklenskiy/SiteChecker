@@ -18,6 +18,6 @@ namespace SiteChecker.Repositories
 
 		Task<Sites[]> GetSitesForCheckAsync();
 
-		Task UpdateStatusAsync(int id, int intervalSec, SiteStatusCodes status);
+		Task UpdateStatusAsync(int id, SiteStatusCodes status);
 	}
 }

@@ -71,7 +71,8 @@ namespace SiteChecker.Repositories
 		{
 			using (var conn = GetConnection())
 			{
-				var updQuery = $"update {TableName} set CheckInterval = @{nameof(Sites.CheckInterval)} where Id = @{nameof(Sites.Id)}";
+				var updQuery = $@"update {TableName} set CheckInterval = @{nameof(Sites.CheckInterval)}, NextCheck = DATETIME(LastCheck, '+{model.CheckInterval} seconds')
+								where Id = @{nameof(Sites.Id)}";
 				conn.Open();
 				await conn.ExecuteAsync(updQuery, new
 				{
@@ -80,7 +81,7 @@ namespace SiteChecker.Repositories
 				});
 			}
 		}
-		
+
 		public async Task DeleteAsync(int id)
 		{
 			using (var conn = GetConnection())
@@ -106,12 +107,12 @@ namespace SiteChecker.Repositories
 			}
 		}
 
-		public async Task UpdateStatusAsync(int id, int intervalSec, SiteStatusCodes status)
+		public async Task UpdateStatusAsync(int id, SiteStatusCodes status)
 		{
 			using (var conn = GetConnection())
 			{
 				var updQuery = $@"UPDATE {TableName} 
-								SET Status = @Status, LastCheck = @LastCheck, NextCheck = @NextCheck 
+								SET Status = @Status, LastCheck = @LastCheck, NextCheck = DATETIME(@LastCheck, '+' || CheckInterval || ' seconds') 
 								WHERE Id = @Id";
 
 				conn.Open();
@@ -119,8 +120,7 @@ namespace SiteChecker.Repositories
 				{
 					Id = id,
 					Status = status.ToString(),
-					LastCheck = DateTime.Now,
-					NextCheck = DateTime.Now.AddSeconds(intervalSec)
+					LastCheck = DateTime.Now
 				});
 			}
 		}
